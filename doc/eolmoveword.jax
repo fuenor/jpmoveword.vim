@@ -1,0 +1,44 @@
+*eolmoveword.jax*       For Vim バージョン 7.2
+==============================================================================
+       Description: 日本語向けカーソル移動プラグイン
+            Author: fuenor <fuenor@gmail.com>
+            https://github.com/fuenor/jpmoveword.vim
+==============================================================================
+
+CONTENTS                                                *eolmoveword_contents*
+1. Intro                                                |eolmoveword_intro|
+2. インストール                                         |eolmoveword_install|
+3. コマンド一覧                                         |eolmoveword_settings|
+4. オプションリスト                                     |eolmoveword_options|
+
+==============================================================================
+1. Intro                                                *eolmoveword_intro*
+
+w,e,bの移動コマンドは行末をまたぐ場合でも、EOL(行末)では停止しません。
+英文の場合は単語単位なので便利なのですが、日本語の場合行末で停止すると便利な場
+合があります。
+
+==============================================================================
+2. インストール                                         *eolmoveword_install*
+
+jpmoveword.vimを`runtime`コマンドで読み込むか、runtimepathを通してくだ
+さい。
+
+==============================================================================
+3. 設定                                                 *eolmoveword_settings*
+
+`set virtualedit+=onemore`を.vimrc等で設定して使用することを推奨します。
+
+==============================================================================
+4. オプション                                           *eolmoveword_options*
+ >
+ let  moveword_enable_wbe = 1 : wbeを本プラグインで置き換える
+
+ let  moveword_stop_eol = 0 : 行末をまたぐ時になにもしない
+ let  moveword_stop_eol = 1 : 行末をまたぐ時にeolで停止
+ let  moveword_stop_eol = 2 : 行末をまたぐ時に行末文字で停止
+                              * 1と2はvirtualeditを設定しない限り違いはありま
+                              * せん
+
+  vim:tw=78:ts=8:ft=help:norl
+
